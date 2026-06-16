@@ -23,7 +23,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(192, 137, 137);
     text-align: center;
     position: relative;
 }
@@ -36,30 +36,42 @@ img {
 
 /* nice big font on a banner style background */
 .topic-title{
-    color: white;
+    color: pink;
     font-size: 2em;
     padding: 0.1em 3em;
     background-color: rgb(71, 71, 71);
+    text-align: center; /* centers the H1 inside the title bar */
+    margin-bottom: 1rem; /* optional spacing */
+}
+
+.topic-title h1 {
+    display: inline-block; /* lets the H1 size to its content so it appears as a centered "bar" */
+    margin: 0;
+    padding: 0.5rem 1rem; /* optional visual padding */
 }
 
 /* Three column grid with a nice big gap */
-.topic-content{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6em;
-    /* bring the whole section in off the sides of the page */
+.topic-content {
+    display: flex;
+    justify-content: center; /* center .topic-card horizontally */
+    align-items: flex-start;
+    gap: 1rem;              /* spacing if you add more cards later */
+    flex-wrap: wrap;        /* keep cards responsive */
     width: 70%;
     /* top margin of 3em and center right/left */
     margin: 3em auto;
 }
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
-.topic-card{
+.topic-card {
     background-color: rgb(71, 71, 71);
-    color: white;
+    color: pink;
     padding: 1em;
     border-radius: 0.5em;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    max-width: 320px;       /* adjust width as needed */
+    margin: 0;              /* centered by the flex container */
+    text-align: center;     /* center text and inline content inside the card */
 }
 
 /* Styling for the topic card titles */
@@ -70,11 +82,25 @@ img {
     text-align: center;
 }
 
+.topic-card img {
+    display: block;
+    margin: 0 auto;         /* ensures image is centered inside the card */
+    max-width: 100%;
+    height: auto;
+}
+
+/* If you keep a standalone "supermarche" line and want to center it: */
+.center {
+    text-align: center;
+}
 
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
     background-color: rgb(71, 71, 71);
-    color: white;
+    color: pink;
     text-align: right;
     padding: 3em 3em;
 }
+
+
+
